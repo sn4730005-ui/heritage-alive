@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>تراثنا الحي — منصة أعلام مصر ومسيرة التعليم والرئاسة</title>
+<meta name="description" content="تراثنا الحي: منصة رقمية عربية توثّق أبرز الشخصيات المصرية في السياسة والعلوم والأدب والفن، وتستعرض أبرز أعمال الرئاسة وتطور التعليم في مصر." />
+<meta name="theme-color" content="#0c2430" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c2430'/%3E%3Cpath d='M16 5l2.8 6.2L25 14l-6.2 2.8L16 23l-2.8-6.2L7 14l6.2-2.8z' fill='%23e3c46a'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="تراثنا الحي — الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M16 3l3.1 6.9L26 13l-6.9 3.1L16 23l-3.1-6.9L6 13l6.9-3.1z" fill="#e3c46a"/>
+          <circle cx="16" cy="27" r="1.7" fill="#e3c46a" opacity=".7"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong id="brandName">تراثنا الحي</strong>
+        <small id="brandTagline">ذاكرة مصر… بأعين أبنائها</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+      <a href="#figures">الشخصيات</a>
+      <a href="#presidency">الرئاسة</a>
+      <a href="#education">تطور التعليم</a>
+      <a href="#videos">الفيديوهات</a>
+      <a href="#about">عن المنصة</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-sm" id="ownerBtn" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3 3-3 3-3-3 3-3zM5 12l3-3 3 3-3 3-3-3zm14 0l-3-3-3 3 3 3 3-3zm-7 7l3-3 3 3-3 3-3-3z"/></svg>
+        <span id="ownerBtnLabel">لوحة المالك</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================ الهيرو ============================ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">منصة التراث المصري الرقمي</p>
+      <h1 id="heroTitle">تراثنا الحي</h1>
+      <p class="hero-sub" id="heroSubtitle">منصة عربية توثّق أبرز الشخصيات المصرية في السياسة والعلم والأدب والفن، وتتابع مسيرة الرئاسة وتطوّر التعليم في مصر عبر قرنين من الزمان.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#figures">
+          استكشف الشخصيات
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5m0 0l6-6m-6 6l6 6"/></svg>
+        </a>
+        <a class="btn btn-outline" href="#education">رحلة التعليم في مصر</a>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </section>
+
+  <!-- =========================== الشخصيات =========================== -->
+  <section class="section" id="figures">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">أعلام مصر</p>
+        <h2>شخصيات صنعت الوجدان المصري</h2>
+        <p>من قادة السياسة إلى علماء الذرة وأدباء نوبل ومطربي الزمن الجميل وروّاد الرياضة… اختر المجال أو ابحث بالاسم لتقرأ النبذة وأبرز الأعمال.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="fieldChips" role="tablist" aria-label="تصفية حسب المجال"></div>
+        <div class="search-box">
+          <label class="sr-only" for="figureSearch">ابحث عن شخصية</label>
+          <input id="figureSearch" type="search" placeholder="ابحث باسم الشخصية أو بكلمة…" autocomplete="off" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+      </div>
+
+      <div class="figures-grid" id="figuresGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============================ الرئاسة =========================== -->
+  <section class="section section-alt" id="presidency">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">أبرز أعمال الرئاسة</p>
+        <h2>الرئاسة في مصر: محطات وإنجازات</h2>
+        <p>عرض زمني لرؤساء جمهورية مصر العربية وأبرز أعمال كل عهد، مع ركن خاص لما تحقق في ملف التعليم خلال كل فترة رئاسية.</p>
+      </div>
+      <div class="timeline" id="presidencyTimeline"></div>
+    </div>
+  </section>
+
+  <!-- ============================ التعليم =========================== -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">تطوّر التعليم في مصر</p>
+        <h2>من مدارس محمد علي إلى التعليم 2.0</h2>
+        <p>رحلة قرنين من الزمان: مجانية التعليم، وقانون التعليم الأساسي، وبنك المعرفة، والجامعات التكنولوجية والأهلية.</p>
+      </div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div class="edu-timeline" id="educationTimeline"></div>
+    </div>
+  </section>
+
+  <!-- ============================ الفيديوهات ========================= -->
+  <section class="section section-alt" id="videos">
+    <div class="wrap">
+      <div class="section-head section-head__row" data-reveal>
+        <div>
+        <p class="eyebrow">مكتبة الفيديو</p>
+        <h2>شاهد… ذاكرة مصر بالصوت والصورة</h2>
+        <p>فيديوهات مختارة عن الشخصيات ومحطات التعليم والرئاسة. <span id="videoOwnerHint" hidden>أضف فيديو جديدًا أو عدّل الموجود من لوحة المالك.</span></p>
+        </div>
+        <button class="btn btn-gold btn-sm" type="button" id="addVideoBtn" hidden>＋ إضافة فيديو</button>
+      </div>
+      <div class="videos-grid" id="videosGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================ عن المنصة =========================== -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">عن المنصة</p>
+        <h2 id="aboutTitle">لماذا «تراثنا الحي»؟</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card" data-reveal>
+          <p id="aboutText">لأن التراث لا يعيش في المتاحف وحدها، بل في العقول التي تصنعه.</p>
+          <ul class="about-list">
+            <li><span class="tick">✓</span><span><strong>محتوى موثّق:</strong> نبذ ذكية وأبرز الأعمال لكل شخصية، مع عرض زمني للرئاسة والتعليم.</span></li>
+            <li><span class="tick">✓</span><span><strong>مكتبة فيديو:</strong> يمكن لمالك المنصة إضافة فيديوهات جديدة وتعديلها أو حذفها في أي وقت.</span></li>
+            <li><span class="tick">✓</span><span><strong>تصميم عصري:</strong> واجهة عربية كاملة (RTL) سريعة ومتوافقة مع الهاتف والتابلت.</span></li>
+            <li><span class="tick">✓</span><span><strong>صلاحية المالك فقط:</strong> كل عمليات الإضافة والتعديل محمية بكلمة مرور وجلسة دخول آمنة.</span></li>
+          </ul>
+        </div>
+        <div class="about-card sources" data-reveal>
+          <h3>المصادر</h3>
+          <p>جُمعت الصور من ويكيميديا كومنز، واستُندت المعلومات إلى مصادر صحفية ومراجع منشورة، ومنها:</p>
+          <ul id="sourcesList"></ul>
+          <p style="margin-top:14px">الصور لأغراض تعريفية/تعليمية وتعود حقوقها لأصحابها.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3l3.1 6.9L26 13l-6.9 3.1L16 23l-3.1-6.9L6 13l6.9-3.1z" fill="#e3c46a"/><circle cx="16" cy="27" r="1.7" fill="#e3c46a" opacity=".7"/></svg>
+          </span>
+          <strong>تراثنا الحي</strong>
+        </div>
+        <p style="font-size:.9rem;max-width:38ch">منصة رقمية عربية لتوثيق أعلام مصر ومسيرة الرئاسة والتعليم، بلغة عصرية تصل إلى الأجيال الجديدة.</p>
+      </div>
+      <div>
+        <h4>أقسام المنصة</h4>
+        <ul>
+          <li><a href="#figures">الشخصيات المصرية</a></li>
+          <li><a href="#presidency">أبرز أعمال الرئاسة</a></li>
+          <li><a href="#education">تطور التعليم</a></li>
+          <li><a href="#videos">مكتبة الفيديو</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>للمالك</h4>
+        <ul>
+          <li><a href="#" id="footerOwnerLink">تسجيل دخول المالك</a></li>
+          <li><a href="#about">كيف تعمل الصلاحيات؟</a></li>
+          <li><a href="#videos">إدارة الفيديوهات</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> تراثنا الحي — جميع الحقوق محفوظة لمالك المنصة.</span>
+      <span>صُنع بشغف للذاكرة المصرية 🇪🇬</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================== مودال الشخصية ======================== -->
+<div class="modal" id="figureModal" role="dialog" aria-modal="true" aria-labelledby="figureModalTitle">
+  <div class="modal-dialog modal-dialog--wide">
+    <button class="modal-close" type="button" data-close aria-label="إغلاق">✕</button>
+    <div class="modal-body figure-modal" id="figureModalContent"></div>
+  </div>
+</div>
+
+<!-- ========================= مودال الفيديو ======================== -->
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+  <div class="modal-dialog modal-dialog--wide">
+    <button class="modal-close" type="button" data-close aria-label="إغلاق">✕</button>
+    <div class="modal-body video-modal-body" id="videoModalContent"></div>
+  </div>
+</div>
+
+<!-- ========================= مودال الدخول ======================== -->
+<div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="modal-dialog modal-dialog--narrow">
+    <button class="modal-close" type="button" data-close aria-label="إغلاق">✕</button>
+    <div class="modal-body" style="padding:32px 28px">
+      <h2 id="authTitle" style="font-size:1.3rem;margin-bottom:6px">دخول المالك</h2>
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:18px">هذه المساحة مخصّصة لمالك المنصة فقط لإضافة الفيديوهات وتعديل المحتوى.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginPassword">كلمة المرور</label>
+          <input id="loginPassword" type="password" name="password" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+        <button class="btn btn-gold" type="submit" style="width:100%" id="loginSubmit">دخول</button>
+      </form>
+      <p class="field hint" style="margin-top:14px">كلمة المرور الافتراضية عند أول تشغيل: <code>Heritage2026!</code> — يمكنك تغييرها من لوحة المالك.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= لوحة المالك ======================== -->
+<div class="scrim" id="drawerScrim"></div>
+<aside class="drawer" id="ownerDrawer" aria-label="لوحة المالك" aria-hidden="true">
+  <div class="drawer-head">
+    <div style="flex:1">
+      <h2>لوحة المالك</h2>
+      <small>إضافة وتعديل المحتوى — صلاحية المالك فقط</small>
+    </div>
+    <button class="mini-btn" type="button" id="drawerClose">إغلاق</button>
+  </div>
+  <div class="drawer-tabs" id="drawerTabs" role="tablist">
+    <button type="button" class="active" data-tab="videos">الفيديوهات</button>
+    <button type="button" data-tab="figures">الشخصيات</button>
+    <button type="button" data-tab="presidency">الرئاسة</button>
+    <button type="button" data-tab="education">التعليم</button>
+    <button type="button" data-tab="settings">الإعدادات</button>
+  </div>
+  <div class="drawer-body">
+    <!-- الفيديوهات -->
+    <section class="drawer-panel active" data-panel="videos">
+      <div class="form-note">أضف فيديو برابط يوتيوب/فيميو أو برفع ملف فيديو من جهازك (حتى 80 ميجابايت). كل فيديو يمكن تعديله أو حذفه لاحقًا.</div>
+      <form id="videoForm">
+        <input type="hidden" id="videoId" />
+        <div class="field">
+          <label for="videoTitle">عنوان الفيديو *</label>
+          <input id="videoTitle" type="text" required placeholder="مثال: جولة في حياة نجيب محفوظ" />
+        </div>
+        <div class="field">
+          <label for="videoDescription">وصف مختصر</label>
+          <textarea id="videoDescription" placeholder="سطر أو سطران يوضحان محتوى الفيديو…"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="videoCategory">التصنيف</label>
+            <input id="videoCategory" type="text" list="videoCategories" placeholder="شخصيات / تعليم / رئاسة" />
+            <datalist id="videoCategories">
+              <option value="شخصيات"></option><option value="تعليم"></option><option value="رئاسة"></option><option value="وثائقي"></option>
+            </datalist>
+          </div>
+          <div class="field">
+            <label for="videoFigure">مرتبط بشخصية (اختياري)</label>
+            <select id="videoFigure"><option value="">— بدون —</option></select>
+          </div>
+        </div>
+        <div class="field">
+          <label>مصدر الفيديو</label>
+          <div class="radio-row">
+            <label><input type="radio" name="sourceType" value="youtube" checked /> رابط (يوتيوب/فيميو)</label>
+            <label><input type="radio" name="sourceType" value="file" /> رفع ملف فيديو</label>
+          </div>
+        </div>
+        <div class="field" id="urlField">
+          <label for="videoUrl">الرابط</label>
+          <input id="videoUrl" type="url" placeholder="https://www.youtube.com/watch?v=…" />
+          <p class="hint">يُقبل رابط المشاهدة أو المشاركة أو Shorts، وسيُحوَّل تلقائيًا إلى مشغّل مضمّن.</p>
+        </div>
+        <div class="field" id="fileField" hidden>
+          <label for="videoFile">ملف الفيديو (MP4 / WebM)</label>
+          <input id="videoFile" type="file" accept="video/mp4,video/webm,video/quicktime,video/ogg" />
+          <p class="hint" id="uploadStatus"></p>
+        </div>
+        <div class="field">
+          <label for="videoThumb">صورة مصغّرة (اختياري)</label>
+          <input id="videoThumb" type="file" accept="image/*" />
+          <p class="hint">إن لم تُرفع صورة، ستُستخدم خلفية تصميمية تلقائية.</p>
+        </div>
+        <div class="panel-actions">
+          <button class="btn btn-gold btn-sm" type="submit" id="videoSubmit">إضافة الفيديو</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="videoReset">تفريغ النموذج</button>
+        </div>
+      </form>
+      <div class="divider"></div>
+      <div class="editor-head"><h3>الفيديوهات المضافة</h3><span class="hint" id="videoCount"></span></div>
+      <div class="admin-list" id="adminVideoList"></div>
+    </section>
+
+    <!-- الشخصيات -->
+    <section class="drawer-panel" data-panel="figures">
+      <div class="form-note">اختر شخصية لتعديل نبذتها وأعمالها وصورتها، أو أضف شخصية جديدة.</div>
+      <div class="field">
+        <label for="figurePicker">الشخصية</label>
+        <select id="figurePicker"></select>
+      </div>
+      <form id="figureForm">
+        <input type="hidden" id="figId" />
+        <div class="field-row">
+          <div class="field"><label for="figName">الاسم</label><input id="figName" type="text" required /></div>
+          <div class="field"><label for="figYears">السنوات</label><input id="figYears" type="text" placeholder="1911 – 2006" /></div>
+        </div>
+        <div class="field"><label for="figField">المجال</label><select id="figField"></select></div>
+        <div class="field">
+          <label for="figPhoto">الصورة</label>
+          <input id="figPhoto" type="file" accept="image/*" />
+          <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+            <img id="figPhotoPreview" alt="" style="width:56px;height:56px;border-radius:12px;object-fit:cover;background:var(--sand-2)" />
+            <span class="hint">اترك الحقل فارغًا للإبقاء على الصورة الحالية.</span>
+          </div>
+        </div>
+        <div class="field"><label for="figBio">النبذة</label><textarea id="figBio"></textarea></div>
+        <div class="field"><label for="figWorks">أبرز الأعمال (سطر لكل عمل)</label><textarea id="figWorks"></textarea></div>
+        <div class="field"><label for="figQuote">مقولة (اختياري)</label><input id="figQuote" type="text" /></div>
+        <div class="field"><label for="figTags">كلمات مفتاحية (مفصولة بفاصلة)</label><input id="figTags" type="text" /></div>
+        <div class="panel-actions">
+          <button class="btn btn-gold btn-sm" type="submit">حفظ التعديلات</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="figNewBtn">شخصية جديدة</button>
+          <button class="btn btn-danger btn-sm" type="button" id="figDeleteBtn">حذف الشخصية</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- الرئاسة -->
+    <section class="drawer-panel" data-panel="presidency">
+      <div class="form-note">تعديل بيانات رئيس الجمهورية وأبرز الأعمال وما تحقق في التعليم.</div>
+      <div class="field"><label for="presPicker">الرئيس</label><select id="presPicker"></select></div>
+      <form id="presForm">
+        <input type="hidden" id="presId" />
+        <div class="field-row">
+          <div class="field"><label for="presName">الاسم</label><input id="presName" type="text" /></div>
+          <div class="field"><label for="presYears">فترة الرئاسة</label><input id="presYears" type="text" /></div>
+        </div>
+        <div class="field"><label for="presSummary">النبذة</label><textarea id="presSummary"></textarea></div>
+        <div class="field"><label for="presAch">أبرز الأعمال (سطر لكل عمل)</label><textarea id="presAch"></textarea></div>
+        <div class="field"><label for="presEdu">إنجازات التعليم (سطر لكل إنجاز)</label><textarea id="presEdu"></textarea></div>
+        <div class="panel-actions"><button class="btn btn-gold btn-sm" type="submit">حفظ</button></div>
+      </form>
+    </section>
+
+    <!-- التعليم -->
+    <section class="drawer-panel" data-panel="education">
+      <div class="form-note">أضف أو عدّل محطات تطوّر التعليم في مصر.</div>
+      <form id="eduForm">
+        <input type="hidden" id="eduIndex" />
+        <div class="field-row">
+          <div class="field"><label for="eduYear">السنة</label><input id="eduYear" type="text" placeholder="1962" /></div>
+          <div class="field"><label for="eduEra">العهد</label><input id="eduEra" type="text" placeholder="الجمهورية" /></div>
+        </div>
+        <div class="field"><label for="eduTitle">العنوان</label><input id="eduTitle" type="text" /></div>
+        <div class="field"><label for="eduText">الوصف</label><textarea id="eduText"></textarea></div>
+        <div class="panel-actions">
+          <button class="btn btn-gold btn-sm" type="submit">حفظ المحطة</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="eduReset">محطة جديدة</button>
+        </div>
+      </form>
+      <div class="divider"></div>
+      <div class="admin-list" id="adminEduList"></div>
+    </section>
+
+    <!-- الإعدادات -->
+    <section class="drawer-panel" data-panel="settings">
+      <div class="form-note">نصوص الواجهة وكلمة مرور المالك.</div>
+      <form id="settingsForm">
+        <div class="field-row">
+          <div class="field"><label for="setSiteName">اسم المنصة</label><input id="setSiteName" type="text" /></div>
+          <div class="field"><label for="setTagline">الشعار النصي</label><input id="setTagline" type="text" /></div>
+        </div>
+        <div class="field"><label for="setHeroTitle">عنوان الواجهة الرئيسية</label><input id="setHeroTitle" type="text" /></div>
+        <div class="field"><label for="setHeroSub">الوصف التعريفي</label><textarea id="setHeroSub"></textarea></div>
+        <div class="field"><label for="setAboutTitle">عنوان «عن المنصة»</label><input id="setAboutTitle" type="text" /></div>
+        <div class="field"><label for="setAboutText">نص «عن المنصة»</label><textarea id="setAboutText"></textarea></div>
+        <div class="panel-actions"><button class="btn btn-gold btn-sm" type="submit">حفظ الإعدادات</button></div>
+      </form>
+      <div class="divider"></div>
+      <h3 style="font-size:.98rem;margin-bottom:6px">نسخة احتياطية للمحتوى</h3>
+      <p class="hint" style="margin-bottom:10px">نزّل نسخة JSON من كل المحتوى (شخصيات، رئاسة، تعليم، فيديوهات) أو استعدها على أي خادم آخر.</p>
+      <div class="panel-actions" style="margin-bottom:6px">
+        <button class="btn btn-ghost btn-sm" type="button" id="exportBtn">⬇ تصدير نسخة</button>
+        <button class="btn btn-ghost btn-sm" type="button" id="importBtn">⬆ استيراد نسخة</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden />
+      </div>
+      <div class="divider"></div>
+      <form id="passwordForm">
+        <h3 style="font-size:.98rem;margin-bottom:10px">تغيير كلمة المرور</h3>
+        <div class="field"><label for="pwCurrent">كلمة المرور الحالية</label><input id="pwCurrent" type="password" autocomplete="current-password" /></div>
+        <div class="field"><label for="pwNext">كلمة المرور الجديدة (6 أحرف على الأقل)</label><input id="pwNext" type="password" autocomplete="new-password" /></div>
+        <div class="panel-actions">
+          <button class="btn btn-gold btn-sm" type="submit">تحديث كلمة المرور</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
